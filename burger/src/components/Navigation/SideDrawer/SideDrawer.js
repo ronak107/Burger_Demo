@@ -17,7 +17,7 @@ const sideDrawer = ( props ) => {
             <div className={attachedClasses.join(' ')}>
                 <div className={classes.Logo}>
                     <Logo />
-                 </div>
+                </div>
                 <nav>
                     <NavigationItems />
                 </nav>
