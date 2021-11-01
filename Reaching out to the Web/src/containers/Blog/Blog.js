@@ -4,21 +4,28 @@ import Post from '../../components/Post/Post';
 import FullPost from '../../components/FullPost/FullPost';
 import NewPost from '../../components/NewPost/NewPost';
 import './Blog.css';
+import Post from '../../components/Post/Post';
 
 class Blog extends Component {
-    componentDidMount (){
-        axios.get('https://jsonplaceholder.typicode.com/posts')
-        .then(Response =>{
-            console.log(Response)
-        })
+    state = {
+        posts: []
     }
-    render () {
+    componentDidMount() {
+        axios.get('https://jsonplaceholder.typicode.com/posts')
+            .then(Response => {
+                this.setState();
+                console.log(Response)
+            })
+        this.setState({ posts: Response.data })
+    }
+    render() {
+        const posts = this.state.posts.map(post => {
+            return <Post title={Post.title} />
+        })
         return (
             <div>
                 <section className="Posts">
-                    <Post />
-                    <Post />
-                    <Post />
+                    {posts}
                 </section>
                 <section>
                     <FullPost />
