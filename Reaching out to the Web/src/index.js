@@ -25,6 +25,7 @@ axios.interceptors.response.use(  response => {
     return Promise.reject(error);
 }
 
+
 )
 ReactDOM.render( <App />, document.getElementById( 'root' ) );
 registerServiceWorker();
